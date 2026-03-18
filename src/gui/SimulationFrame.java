@@ -7,17 +7,21 @@ import algorithms.PageReplacementAlgorithm;
 import core.MemoryManager;
 import core.MemoryManager.Step;
 import statistics.PerformanceMetrics;
+import statistics.RunResult;
 import utils.PageSequenceGenerator;
 import model.Frame;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SimulationFrame extends JFrame {
 
     private MemoryManager manager;
     private int[] currentSequence;
+    private List<RunResult> runHistory = new ArrayList<>();
 
     private JPanel simulationPanel;
     private JPanel sequencePanel;
@@ -52,8 +56,6 @@ public class SimulationFrame extends JFrame {
 
         setVisible(true);
     }
-
-    // --------------------------- TOP PANEL -----------------------------
 
     private JPanel createTopSequencePanel(){
         JPanel top = new JPanel();
@@ -171,7 +173,8 @@ public class SimulationFrame extends JFrame {
 
             int[] seq = PageSequenceGenerator.generateRandomSequence(len, max);
             StringBuilder sb = new StringBuilder();
-            for (int n : seq) sb.append(n).append(" ");
+            for (int n : seq)
+                sb.append(n).append(" ");
 
             manualSequenceField.setText(sb.toString().trim());
 
@@ -318,6 +321,8 @@ public class SimulationFrame extends JFrame {
     private void showStatistics() {
         if (manager == null || currentSequence == null) return;
 
+        String algName = algorithmBox.getSelectedItem().toString();
+
         PageReplacementAlgorithm algStats = switch (algorithmBox.getSelectedItem().toString()) {
             case "FIFO" -> new FIFO();
             case "LRU" -> new LRU();
@@ -339,6 +344,16 @@ public class SimulationFrame extends JFrame {
                 100.0
         );
 
-        new StatisticsDialog(this, metrics);
+        RunResult result = new RunResult(algName,
+                                         statManager.getFrames().length,
+                                         statManager.getPageTable().size(),
+                                         metrics.getTotalAccesses(),
+                                         metrics.getTotalPageFaults(),
+                                         metrics.getFaultRate(),
+                                         metrics.getAverageMemoryAccessTime(),
+                                         metrics.getMemoryUtilizationPercent());
+
+        runHistory.add(result);
+        new StatisticsDialog(this, runHistory);
     }
 }

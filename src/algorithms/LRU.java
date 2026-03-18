@@ -4,10 +4,6 @@ import model.Frame;
 import model.PageTable;
 import model.PageTableEntry;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-
 public class LRU implements PageReplacementAlgorithm {
 
     @Override

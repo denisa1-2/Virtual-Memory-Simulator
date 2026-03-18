@@ -39,7 +39,6 @@ public class MemoryManager {
 
         PageTableEntry entry = pageTable.getEntry(pagenumber);
 
-        //hit
         if(entry.isValid()){
             hits++;
             entry.setReferenced(true);
@@ -47,7 +46,6 @@ public class MemoryManager {
             return true;
         }
 
-        //miss
         faults++;
 
         int freeFrame = findFreeFrame();
