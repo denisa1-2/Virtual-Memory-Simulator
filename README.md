@@ -1,6 +1,7 @@
 # Virtual-Memory-Simulator
 
 ## Overview
+```markdown
 Virtual Memory Simulator is a Java desktop application that visually demonstrates how page replacement works in an operating system.
 
 The application allows the user to configure the number of physical memory frames, define or generate a page reference sequence, choose a page replacement algorithm, and watch the simulation step by step through a graphical interface.
@@ -10,7 +11,7 @@ This project was built to improve understanding of virtual memory management con
 ---
 
 ## Features
-- Interactive java Swing graphical interface
+- Interactive Java Swing graphical interface
 - Step-by-step visualization of page accesses
 - Support for multiple page replacement algorithms:
     - FIFO (First-In, First-Out)
@@ -59,7 +60,7 @@ This is a theoretical optimal algorithm and is useful as a benchmark.
 ## Technologies Used
 - Java
 - Java Swing
-- Object-Oriented Programmin
+- Object-Oriented Programming
 
 ---
 
@@ -125,19 +126,28 @@ This makes it easier to compare the behavior of different algorithms under the s
 - An IDE such as IntelliJ IDEA
 
 ### Steps
-1. Clone the reposiroty:
+1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/Virtual-Memory-Simulator.git
 2. Open the project in IntelliJ IDEA
 3. Run the **Main** class
 
+## Usage
+
+1. Select a page replacement algorithm (FIFO, LRU, OPT)
+2. Set the number of frames and pages
+3. Enter a custom page sequence or generate a random one
+4. Click **Run Simulation**
+5. Observe page hits and faults in real time
+6. View performance statistics after the simulation
+
 ## Why I Built This Project
 
 This project was developed as part of a university assignment, but also as a personal learning initiative.
 
-I wanted to better understand how virtual memory works at a deeper level, including how page replacement algorithms behave in practice and how operating systems manage memory efficently.
+I wanted to better understand how virtual memory works at a deeper level, including how page replacement algorithms behave in practice and how operating systems manage memory efficiently.
 
-By building this simulator, I was able to explore both the theoretical and practical aspects of memory management, as well as imrpove my skills in Java, object-oriented design, and building graphical user interfaces.
+By building this simulator, I was able to explore both the theoretical and practical aspects of memory management, as well as improve my skills in Java, object-oriented design, and building graphical user interfaces.
 
 ## Possible Improvements
 - Add charts for comparing algorithm performance
@@ -174,3 +184,6 @@ By building this simulator, I was able to explore both the theoretical and pract
   <br>
   <em>Statistics table displaying performance metrics such as page faults, fault rate, and memory utilization.</em>
 </p>
+
+## Author
+Răileanu Iulia-Denisa
