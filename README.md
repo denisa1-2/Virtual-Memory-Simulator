@@ -149,7 +149,7 @@ By building this simulator, I was able to explore both the theoretical and pract
 
 ## Screenshots
 1. Main window
-2. 
+
 <img width="881" height="555" alt="image" src="https://github.com/user-attachments/assets/e15befa8-b0f1-4a22-b935-fec10bf1452f" />
 *Main interface of the simulator showing the page sequence and memory frames.*
 
@@ -160,5 +160,6 @@ By building this simulator, I was able to explore both the theoretical and pract
 *Step-by-step simulation highlighting page hits (green) and page faults (red).*
 
 3. Statistics
+
 <img width="877" height="321" alt="image" src="https://github.com/user-attachments/assets/10e95a1f-ba88-4b49-9763-10abe7c73e73" />
 *Statistics table displaying performance metrics such as page faults, fault rate, and memory utilization.*
