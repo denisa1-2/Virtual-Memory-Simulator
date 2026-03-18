@@ -87,6 +87,7 @@ src/
 |- utils/
 |  |- PageSequenceGenerator.java
 |- Main.java
+```
 
 ## Example Configuration
 - Algorithm: FIFO / LRU / OPT
