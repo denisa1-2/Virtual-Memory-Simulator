@@ -1,7 +1,6 @@
 # Virtual-Memory-Simulator
 
 ## Overview
-```markdown
 Virtual Memory Simulator is a Java desktop application that visually demonstrates how page replacement works in an operating system.
 
 The application allows the user to configure the number of physical memory frames, define or generate a page reference sequence, choose a page replacement algorithm, and watch the simulation step by step through a graphical interface.
